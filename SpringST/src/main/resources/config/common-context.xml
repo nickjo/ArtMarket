@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:encryption="http://www.jasypt.org/schema/encryption"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" 
+	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+	
+
+	<!-- BeanPostProcessor 를 함께 등록해 주므로 @Autowired 사용가능 -->
+	<context:annotation-config />
+	<!-- @Configurable이 붙어있는 bean을 찾아서 스프링이 관리하도록 설정 -->
+	<context:spring-configured />
+	<!-- proxy 설정을 따로 안해줘도 됨 -->
+	<!-- <aop:aspectj-autoproxy/> -->
+	<!-- <context:component-scan base-package="org.art.inside">
+	</context:component-scan> -->
+	<context:property-placeholder location="classpath:config/jdbc.properties" />
+</beans>

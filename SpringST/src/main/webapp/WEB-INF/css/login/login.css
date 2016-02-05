@@ -1,0 +1,4 @@
+.fb-like div, .fb-like iframe {
+  min-width: 150px !important;
+  min-height: 40px !important;
+}
